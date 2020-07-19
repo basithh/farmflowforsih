@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Store Food</title>
+  
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+
+
+ 
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light ">
+        <a class="navbar-brand" href="#"><button class="border-0" id="menu-toggle" >≡</button><img src="image/Logo2.png" alt="" height="60" width="69">FarmFlow</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"To aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="ggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+           
+     
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Product</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Product
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">ColdStorage</a>
+                <a class="dropdown-item" href="#">Farmer</a>
+                <a class="dropdown-item" href="#">Supply Chain</a>
+                <a class="dropdown-item" href="#"></a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Register<span class="sr-only">(current)</span></a>
+              </li>
+            <li class="nav-item my-2 my-lg-0">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{user}} Logout</a>
+            </li>
+     
+          </ul>
+        </div>
+        
+      </nav>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><img src="{% static 'image/Logo.png' %}" alt="" srcset="" height="15" width="15">Hi {{user}}</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark">View Storage</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Add Storage</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Add Tank</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">feature1</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">feature2</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+<div>
+    <h1>Viewing Storage <span class="badge badge-secondary">New</span></h1>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <div class="container" id="no-more-tables">
+      <p>&nbsp;</p>
+      <table class="table table-hover">
+        <thead>
+          <tr class="active">
+            <th class="col-xs-2"><strong>StorageID</strong></th>
+            <th class="col-xs-2"><strong>StorageName</strong></th>
+            <th class="col-xs-6"><strong>Type Of Storage</strong></th>
+            <th class="col-xs-2"><strong>No of Tankers</strong></th>
+            <th class="col-xs-2"><strong>Action</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr role="button" data-toggle="collapse" href="#demo1" aria-expanded="false" aria-controls="demo1">
+            <td >24DR45</td>
+            <td >FOY AREA</td>
+            <td >Mandi/Dry</td>
+            <td >3</td>
+            <td >Add|Remove</td>
+          </tr>
+          <tr>
+            <td colspan="6" class="hiddenRow">
+              <div class="collapse" id="demo1">
+                  <table class="table table-nested">
+                    <thead>
+                      <tr>
+                        <th scope="col">TankID</th>
+                        <th scope="col">Tank Name</th>
+                        <th scope="col">Handler</th>
+                        <th scope="col">Crop</th>
+                        <th scope="col">Capacity</th>
+                        <th scope="col">Cap Ava</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                      
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>AQ345</th>
+                        <td>DO1Tank</td>
+                        <td>SriRam S</td>
+                        <td>Wheat</td>
+                        <td>5Ton</td>
+                        <td>5Ton</td>
+                        <td>Add|Remove</td>
+                      </tr>
+                      <tr>
+                        <th>AQ345</th>
+                        <td>DO1Tank</td>
+                        <td>SriRam S</td>
+                        <td>Wheat</td>
+                        <td>5Ton</td>
+                        <td>5Ton</td>
+                        <td>Add|Remove</td>
+                      </tr>
+                      <tr>
+                        <th>AQ345</th>
+                        <td>DO1Tank</td>
+                        <td>SriRam S</td>
+                        <td>Wheat</td>
+                        <td>5Ton</td>
+                        <td>5Ton</td>
+                        <td>Add|Remove</td>
+                      </tr>
+                    </tbody>        
+                  </table>
+                
+              </div>
+            </td>
+          </tr>
+          <tr role="button" data-toggle="collapse" href="#demo2" aria-expanded="false" aria-controls="demo2">
+            <td >345F67</td>
+            <td >FOY2 AREA</td>
+            <td >Cold Storage</td>
+            <td >3</td>
+            <td >Add|Remove</td>
+          </tr>
+          <tr>
+            <td colspan="6" class="hiddenRow">
+              <div class="collapse" id="demo1">
+                  <table class="table table-nested">
+                    <thead>
+                      <tr>
+                        <th scope="col">TankID</th>
+                        <th scope="col">Tank Name</th>
+                        <th scope="col">Handler</th>
+                        <th scope="col">Crop</th>
+                        <th scope="col">Capacity</th>
+                        <th scope="col">Cap Ava</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                      
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>T59UI</th>
+                        <td>C09Tank</td>
+                        <td>Umar</td>
+                        <td>Milk</td>
+                        <td>500L</td>
+                        <td>500L</td>
+                        <td>Add|Remove</td>
+                      </tr>
+                      <tr>
+                        <th>T59UI</th>
+                        <td>C09Tank</td>
+                        <td>Umar</td>
+                        <td>Milk</td>
+                        <td>500L</td>
+                        <td>500L</td>
+                        <td>Add|Remove</td>
+                      </tr>
+                      <tr>
+                        <th>T59UI</th>
+                        <td>C09Tank</td>
+                        <td>Umar</td>
+                        <td>Milk</td>
+                        <td>500L</td>
+                        <td>500L</td>
+                        <td>Add|Remove</td>
+                      </tr>
+                    </tbody>        
+                  </table>
+                
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+     
+ </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+    $('#modChart').on('shown.bs.modal',function(event){
+    var link = $(event.relatedTarget);
+    // get data source
+    var source = link.attr('data-source').split(',');
+    // get title
+    var title = link.html();
+    // get labels
+    var table = link.parents('table');
+    var labels = [];
+    $('#'+table.attr('id')+'>thead>tr>th').each(function(index,value){
+        // without first column
+        if(index>0){labels.push($(value).html());}
+    });
+    // get target source
+    var target = [];
+    $.each(labels, function(index,value){
+        target.push(link.attr('data-target-source'));
+    });
+    // Chart initialisieren
+    var modal = $(this);
+    var canvas = modal.find('.modal-body canvas');
+    modal.find('.modal-title').html(title);
+    var ctx = canvas[0].getContext("2d");
+    var chart = new Chart(ctx).Line({        
+        responsive: true,
+        labels: labels,
+        datasets: [{
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: source
+        },{
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "#F7464A",
+            pointColor: "#FF5A5E",
+            pointStrokeColor: "#FF5A5E",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "red",
+            data: target
+        }]
+    },{});
+}).on('hidden.bs.modal',function(event){
+    // reset canvas size
+    var modal = $(this);
+    var canvas = modal.find('.modal-body canvas');
+    canvas.attr('width','568px').attr('height','300px');
+    // destroy modal
+    $(this).data('bs.modal', null);
+});
+  </script>
+
+
+</body>
+
+</html>

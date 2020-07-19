@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <%for(var i = 0;i<=storage.length;i+=3){%>
+            <div class="row">
+              <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%=storage[i+1].storageName%></h5>
+                      <p class="card-text">Storage Size <%=storage[i+1].storageSize%> <br> Location<%= sstorage[i+1].location %></p>
+                      <a href="/viewmystorage/<%=Storage[i+1]._id%>"class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%=storage[i+2].storageName%></h5>
+                      <p class="card-text">Storage Size <%=storage[i+2].storageSize%> <br> Location<%= storage[i+2].location %></p>
+                      <a href="/viewmystorage/<%=Storage[i+2]._id%>" class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%=Storage[i+3].storageName%></h5>
+                      <p class="card-text">storage Size <%=storage[i+3].storageSize%> <br> Location<%= storage[i+3].location %></p>
+                      <a href="/viewmystorage/<%=Storage[i+3]._id%>" class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        <%}%>
+          </div>
+        
+    </div>
+    
+
+
+
+
+<!-- 
+        <table class="table">
+          <thead>
+            <tr>
+
+              <th scope="col">storageName</th>
+              <th scope="col">storageSize</th>
+              <th scope="col">location</th>
+              <th scope="col">Link</th>
+              
+            </tr>
+
+          </thead>
+          <%storage.forEach(function(obj) {%>
+          <tbody>
+            
+            <tr>
+
+              <td><%= obj["storageName"] %></td>
+              <td><%= obj["storageSize"]  %></td>
+              <td><%= obj["location"] %></td>
+              <td><a class="btn btn-primary btn-lg" href="/viewmystorage/<%=obj["_id"]%>" role="button">details</a></td>
+
+            </tr>
+        
+          </tbody>
+        </table>
+        
+        <%})%> -->
+
+
+</body>
+</html>
