@@ -13,11 +13,11 @@ exports.addTankerget=(req,res)=>{
 
 
 exports.addStoragepost=(req,res)=>{
-    console.log(req.body);
     var query = req.body;
+    query["image"]=req.file.filename;
     query["userid"]=req.user;
+
     var storage = new Storage(query);
-    
     storage.save((err,storage)=>{
         if(err){
             return res.status(400).json({
@@ -25,9 +25,14 @@ exports.addStoragepost=(req,res)=>{
             })
         }
         console.log(storage)
-        res.render('previewstorage',{storage})
-    });
+        res.redirect('/viewmystorage')
+   
+ });
 }
+
+
+
+
 
 exports.addTankerpost=(req,res)=>{
     var tanker = new Tanker(req.body);
@@ -81,5 +86,12 @@ exports.viewmystorage=(req,res)=>{
         if(err){return res.send("404")}
         if(!storage){return res.send("ouytgdf")}
         res.render('viewmystorage',{storage});
+        // res.send(storage)
     })
+}
+
+
+
+exports.dashboard=(req,res)=>{
+    return res.render("sucessdash",{name:"Admin",firstname:req.profile.firstname})
 }

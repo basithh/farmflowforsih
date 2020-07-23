@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addtrader</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Add trader <span class="badge badge-secondary"></span></h1>
+        </div>
+    <div>
+        <form action="/addstorage" method="POST">
+            <div class="form-group">
+              <label for="formGroupExampleInput">trader name</label>
+              <input type="text" name="tradername" class="form-control" id="formGroupExampleInput" placeholder="storage name">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">trader location</label>
+              <input type="text" name="location" class="form-control" id="formGroupExampleInput2" placeholder="size">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">trader description</label>
+              <input type="text" name="description" class="form-control" id="formGroupExampleInput2" placeholder="location">
+            </div>
+              <input type="submit" value= "post" class="btn btn-primary" name="signup-button"value="sign up"/>
+          </form>
+    </div>
+    </div>
+</body>
+</html>

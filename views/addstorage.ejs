@@ -11,7 +11,8 @@
             <h1>Add Storage <span class="badge badge-secondary"></span></h1>
         </div>
     <div>
-        <form action="/addstorage" method="POST">
+        <form action="/addstorage" method="POST" enctype="multipart/form-data" >
+          <input type="file" name="avatar" />
             <div class="form-group">
               <label for="formGroupExampleInput">storage name</label>
               <input type="text" name="storageName" class="form-control" id="formGroupExampleInput" placeholder="storage name">

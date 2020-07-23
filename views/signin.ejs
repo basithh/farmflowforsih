@@ -1,30 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Signin</title>
-</head>
-<body>
-      
-    <div class="container">
-        <form action="/signin" method="post">
-            <p><% if (messages.error) { %>
-                <%= messages.error %>
-              <% } %></p>
-            <p>Username</p>
-        <input type="text"name="email"placeholder="enter username">
-        <p>Password</p>
-        <input type="password"name="password"placeholder="enter password">
-        <input type="submit"name=""value="Login"><br>
-        </form>
+    <head>
+        <meta charset="utf-8" />
+        <title>pvex - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 
-</div>
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="authentication-bg authentication-bg-pattern">
+
+        <div class="account-pages mt-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card">
+
+                            <div class="card-body p-4">
+                                
+                                <div class="text-center w-75 m-auto">
+                                    <a href="index.html">
+                                        <span><img src="assets/images/logo-dark.png" alt="" height="50"></span>
+                                    </a>
+                                    <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
+                                </div>
+
+                                <h5 class="auth-title">Sign In</h5>
+
+                                <form action="/signin" method="post">
+
+                                    <div class="form-group mb-3">
+                                        <label for="emailaddress">Email address</label>
+                                        <input class="form-control" type="email" id="emailaddress" name="email" required="" placeholder="Enter your email">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="password">Password</label>
+                                        <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <div class="custom-control custom-checkbox checkbox-info">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox-signin">
+                                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-0 text-center">
+                                        <button class="btn btn-danger btn-block" type="submit"> Log In </button>
+                                    </div>
+
+                                </form>
+
+                                <!-- <div class="text-center">
+                                    <h5 class="mt-3 text-muted">Sign in with</h5>
+                                    <ul class="social-list list-inline mt-3 mb-0">
+                                        <li class="list-inline-item">
+                                            <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+
+                            </div> <!-- end card-body -->
+                        </div>
+                        <!-- end card -->
+
+                        <div class="row mt-3">
+                            <div class="col-12 text-center">
+                                <p> <a href="pages-recoverpw.html" class="text-muted ml-1">Forgot your password?</a></p>
+                                <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-muted ml-1"><b class="font-weight-semibold">Sign Up</b></a></p>
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end page -->
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</body>
+        <footer class="footer footer-alt">
+            2019 &copy; Upvex theme by <a href="" class="text-muted">Coderthemes</a> 
+        </footer>
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
 </html>

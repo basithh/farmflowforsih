@@ -1,37 +1,43 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema;
 
-const StorageSchema = new mongoose.Schema({
-  storageName: {
-    type: String,
-  },
-  userid: {
-    type: ObjectId,
-    ref: "User",
-  },
-  storageSize: {
-    type: String,
-  },
-  location: {
-    type: String,
-  },
-  order: [
-    {
-      price: Number,
-      tankerid: Number,
-      userid: {
-        type: ObjectId,
-        ref: "User",
-      },
+const StorageSchema = new mongoose.Schema(
+  {
+    storageName: {
+      type: String,
     },
-  ],
-  date: {
-    type: Date,
-    default: Date.now,
+    userid: {
+      type: ObjectId,
+      ref: "User",
+    },
+    storageSize: {
+      type: String,
+    },
+    location: {
+      type: String,
+    },
+    order: [
+      {
+        price: Number,
+        tankerid: Number,
+        userid: {
+          type: ObjectId,
+          ref: "User",
+        },
+      },
+    ],
+    image: {
+      type: String,
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
   },
-},{
-    timestamps:true
-});
+  {
+    timestamps: true,
+  }
+);
 
 const TankerSchema = new mongoose.Schema(
   {
@@ -52,12 +58,14 @@ const TankerSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    image: {
+      type: String,
+    },
   },
   {
     timestamps: true,
   }
 );
-module.exports =  mongoose.model("Tanker", TankerSchema);
+module.exports = mongoose.model("Tanker", TankerSchema);
 
-
-module.exports =  mongoose.model("Storage", StorageSchema);
+module.exports = mongoose.model("Storage", StorageSchema);

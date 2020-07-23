@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddESCrop</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Add EScrop <span class="badge badge-secondary"></span></h1>
+        </div>
+    <div>
+        <form action="/addescrop/<%=id%>" method="POST" >
+            <div class="form-group">
+              <label for="formGroupExampleInput2">requirement </label>
+              <input type="text" name="requirement" class="form-control" id="formGroupExampleInput2" placeholder="requirement">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">location</label>
+              <input type="text" name="location" class="form-control" id="formGroupExampleInput2" placeholder="location">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">finaldateofbid</label>
+                <input type="date" name="finaldateofbid" class="form-control" id="formGroupExampleInput2" placeholder="finaldateofbid">
+              </div>
+
+              <input type="submit" value= "post" class="btn btn-primary" name="signup-button"value="sign up"/>
+          </form>
+    </div>
+    </div>
+</body>
+</html>

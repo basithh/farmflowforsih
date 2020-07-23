@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addcrop</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Add crop <span class="badge badge-secondary"></span></h1>
+        </div>
+    <div>
+        <form action="/addcrop" method="POST" enctype="multipart/form-data">
+          <input type="file" name="avatar" />
+            <div class="form-group">
+              <label for="formGroupExampleInput">crop name</label>
+              <input type="text" name="cropName" class="form-control" id="formGroupExampleInput" placeholder="crop name">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">variety</label>
+              <input type="text" name="variety" class="form-control" id="formGroupExampleInput2" placeholder="variety">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">priceOnAvervage</label>
+              <input type="text" name="priceOnAvervage" class="form-control" id="formGroupExampleInput2" placeholder="priceonaverage">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">priceMax</label>
+                <input type="text" name="priceMax" class="form-control" id="formGroupExampleInput2" placeholder="pricemax">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">description</label>
+                <input type="text" name="description" class="form-control" id="formGroupExampleInput2" placeholder="description">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">climate : wind</label>
+                <input type="text" name="climate["wind"]" class="form-control" id="formGroupExampleInput2" placeholder="wind">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">climate : tempertature</label>
+                <input type="text" name="climate["tempertature"]" class="form-control" id="formGroupExampleInput2" placeholder="temperature">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">climate : humidity</label>
+                <input type="text" name="climate["humidity"]" class="form-control" id="formGroupExampleInput2" placeholder="humidity">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">soil</label>
+                <input type="text" name="soil" class="form-control" id="formGroupExampleInput2" placeholder="soil">
+              </div>
+              
+              <input type="submit"  class="btn btn-primary" />
+          </form>
+    </div>
+    </div>
+</body>
+</html>

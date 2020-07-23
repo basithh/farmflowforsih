@@ -10,9 +10,11 @@ const User = require("./models/user");
 const LocalStrategy = require("passport-local").Strategy;
 const cookieParser = require("cookie-parser");
 
+
 // Module On refactoring
 
 const app = express();
+app.use(express.static('public'))
 app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(
@@ -65,10 +67,17 @@ passport.deserializeUser(function (user, done) {
 //Module imported from Routes
 const userRoute = require("./routers/user");
 const storageRoute = require("./routers/storage");
+const adminRoute = require("./routers/admin");
+const farmerRoute = require("./routers/farmer");
+
+
 
 //Route via use in app
 app.use("/", userRoute);
 app.use("/",storageRoute);
+app.use("/",adminRoute);
+app.use("/",farmerRoute);
+
 
 const port = process.env.PORT || 3000;
 

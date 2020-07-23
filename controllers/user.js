@@ -46,7 +46,6 @@ exports.checkNotAuthenticated=(req, res, next) =>{
   
 exports.getuserby=async (req,res,next)=>{
   await User.findById(req.user, function (err, user) {
-
     console.log(user)
     req.profile=user;
   });
@@ -73,22 +72,22 @@ exports.loginpost=()=>{passport.authenticate('local', {
 exports.dashboard=(req,res)=>{
   switch(req.profile.role){
     case "1":
-      return res.render("sucessdash",{name:"Admin"})
+      return res.redirect('/farmerdashboard');
       break;
     case "2":
-      return res.render("sucessdash",{name:"Farmer"})
+      return res.redirect('/farmerdashboard')
       break;
     case "3":
-      return res.render("sucessdash",{name:"Storage"})
+      return res.redirect('/farmerdashboard')
       break;
     case "4":
-      return res.render("sucessdash",{name:"Trader"})
+      return res.redirect('/farmerdashboard')
       break;
     case "5":
-      return res.render("sucessdash",{name:"Transport"})
+      return res.redirect('/farmerdashboard')
       break;
     case "6":
-      return res.render("sucessdash",{name:"Processor"})
+      return res.redirect('/farmerdashboard')
       break;
   }
 }
