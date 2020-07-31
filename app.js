@@ -9,12 +9,12 @@ const session = require("express-session");
 const User = require("./models/user");
 const LocalStrategy = require("passport-local").Strategy;
 const cookieParser = require("cookie-parser");
-
+const socket =require('socket.io');
 
 // Module On refactoring
 
 const app = express();
-app.use(express.static('public'))
+app.use(express.static('public'));
 app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(
@@ -69,7 +69,7 @@ const userRoute = require("./routers/user");
 const storageRoute = require("./routers/storage");
 const adminRoute = require("./routers/admin");
 const farmerRoute = require("./routers/farmer");
-
+const traderRoute = require("./routers/trader");
 
 
 //Route via use in app
@@ -77,10 +77,29 @@ app.use("/", userRoute);
 app.use("/",storageRoute);
 app.use("/",adminRoute);
 app.use("/",farmerRoute);
+app.use("/",traderRoute)
+app.get('/d',(req,res)=>{
+  return res.render('chat');
+})
+
+
+
 
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, (req, res) => {
+var server= app.listen(port, (req, res) => {
   console.log(" server strated at 3000");
 });
+
+
+var io = socket(server);
+io.on('connection',(socket)=>{
+  console.log('made socket connection ',socket.id);
+  socket.on('chat',function(data){
+      io.sockets.emit('chat',data);
+  });
+  socket.on('typing',function(data){
+      socket.broadcast.emit('typing',data);
+  })
+})

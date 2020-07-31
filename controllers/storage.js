@@ -1,22 +1,17 @@
-const { query } = require('express');
+
 const Storage = require('../models/storage');
 const Tanker = require('../models/storage');
 
 exports.addStorageget=(req,res)=>{
-    res.render('addstorage');
+    res.render('storage/addstorage');
 }
-
-exports.addTankerget=(req,res)=>{
-    res.render('addtanker');
-}
-
 
 
 exports.addStoragepost=(req,res)=>{
     var query = req.body;
-    query["image"]=req.file.filename;
+    console.log(req.file)
+    query["image"]=req.file.filename;   //stop maddy i Got it
     query["userid"]=req.user;
-
     var storage = new Storage(query);
     storage.save((err,storage)=>{
         if(err){
@@ -34,18 +29,7 @@ exports.addStoragepost=(req,res)=>{
 
 
 
-exports.addTankerpost=(req,res)=>{
-    var tanker = new Tanker(req.body);
-    tanker.tankerid= req.user;
-    tanker.save((err,tanker)=>{
-        if(err){
-            return res.status(400).json({
-                err:"Not able to add tanker in DB"
-            })
-        }
-        res.redirect('/previewstorage',{tanker})
-    });
-}
+
 
 exports.getbyStorageid=(req,res,next,id)=>{
     Storage.findById(id,(err,storage)=>{
@@ -67,25 +51,26 @@ exports.storageview=(req,res)=>{
 }
 
 
-
-
-exports.modifyStorageget=(req,res)=>{
-
-    
+exports.viewstorage=(req,res)=>{
+   // user=req.user;
+    Storage.find({},(err,storage)=>{
+        if(err){return res.send("404")}
+        if(!storage){return res.send("ouytgdf")}
+        res.render('storage/viewstorage',{storage});
+        // res.send(storage)
+    })
 }
 
 
 
-exports.deleteStorageget=(req,res)=>{
 
-    
-}
+
 exports.viewmystorage=(req,res)=>{
     user=req.user;
     Storage.find({userid:user},(err,storage)=>{
         if(err){return res.send("404")}
         if(!storage){return res.send("ouytgdf")}
-        res.render('viewmystorage',{storage});
+        res.render('farmer/viewmystorage',{storage});
         // res.send(storage)
     })
 }
@@ -95,3 +80,16 @@ exports.viewmystorage=(req,res)=>{
 exports.dashboard=(req,res)=>{
     return res.render("sucessdash",{name:"Admin",firstname:req.profile.firstname})
 }
+
+
+exports.processStorage=(req,res)=>{
+    query1={
+        order:{
+            userid:req.user
+        }
+    }
+    Storage.findByIdAndUpdate(req.params.storageid,query1,(err,d)=>{if(err){console.log(err)}console.log(d)}); 
+    res.redirect('/d')
+}
+
+

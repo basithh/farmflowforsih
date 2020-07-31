@@ -30,7 +30,7 @@ var CropSchema = mongoose.Schema({
         humidity: Number,
     },
     soil : {
-        type:Number,
+        type:String,
     }, 
     image:{
         type:String,

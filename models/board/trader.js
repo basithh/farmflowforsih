@@ -3,23 +3,16 @@ const { ObjectId } = mongoose.Schema;
 
 const TraderSchema = new mongoose.Schema(
   {
-    tradername: {
-      type: String,
-    },
-    userObjectID: {
+    cropid: {
       type: ObjectId,
-      ref: "User",
+      ref: "Crop",
     },
-    location: {
+    price: {
       type: String,
+      required: true,
+      maxlength: 32,
     },
-    storageObjectId: {
-      type: ObjectId,
-      ref: "Storage",
-    },
-    description: {
-      type: string,
-    },
+
     date: {
       type: Date,
       default: Date.now,

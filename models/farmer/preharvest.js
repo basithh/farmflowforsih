@@ -17,13 +17,17 @@ const PreharvestSchema = new mongoose.Schema(
     harvestlocation: {
       type: String,
     },
-    OrderBy: {
-      type: String,
+    trader : {traderid: {
+      type: ObjectId,
+      ref: "User",
+    },
+    price: {
+      type: Number,
     },
     date: {
       type: Date,
       default: Date.now,
-    },
+    }}
   },
   {
     timestamps: true,

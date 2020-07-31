@@ -16,16 +16,16 @@ const StorageSchema = new mongoose.Schema(
     location: {
       type: String,
     },
-    order: [
+    rent:{
+      type: Number,
+    },
+    order: 
       {
-        price: Number,
-        tankerid: Number,
         userid: {
           type: ObjectId,
           ref: "User",
         },
       },
-    ],
     image: {
       type: String,
     },

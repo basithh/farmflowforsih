@@ -1,5 +1,11 @@
+// Models
+
+
 const Crop = require('../models/board/crop');
 const EsCrop = require('../models/board/escrop');
+
+
+
 
 exports.addcropget=(req,res)=>{
     return res.render('addcrop');
@@ -63,15 +69,15 @@ exports.addescroppost=(req,res)=>{
 }
 
 
-exports.viewescrop=(req,res)=>{
-    EsCrop.find({}).populate('cropid')
-    .populate({ path: 'userid', select: 'firstname' })
-    .exec( function(err, escrop) {
-        if(err){return res.send("404")}
-        if(!escrop){return res.send("Nothing was found")}
-      res.render('viewescrop',{escrop})
-//    res.send(escrop)
-    })
+// exports.viewescrop=(req,res)=>{
+//     EsCrop.find({}).populate('cropid')
+//     .populate({ path: 'userid', select: 'firstname' })
+//     .exec( function(err, escrop) {
+//         if(err){return res.send("404")}
+//         if(!escrop){return res.send("Nothing was found")}
+//       res.render('farmer/escrop',{escrop})
+// //    res.send(escrop)
+//     })
     
-}
+// }
 

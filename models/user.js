@@ -28,6 +28,9 @@ var userSchema = new mongoose.Schema(
     address: {
       type: String,
     },
+    lang:{
+      type:Number,
+    }
   },
   { timestamps: true }
 );
