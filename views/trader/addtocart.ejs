@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title> My Trading Cart</title>
+</head>
+<body>
+  
+
+  <div class="container">
+    <%var i=1;%>
+    <%addtocart.forEach(function(obj) {%>
+      <%if((i-1)%3==0){%><div class="row"><%}%>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="/image/<%=obj["crop"]["cropid"]["escropid"]["cropid"]["image"]%>">
+          <div class="card-body">
+            <h5 class="card-title">Farmer Name <%=obj["crop"]["cropid"]["userid"]["firstname"]%></h5>
+            <h5 class="card-title">Crop Name <%=obj["crop"]["cropid"]["escropid"]["cropid"]["cropName"]%></h5>
+            <p class="card-text">Variety <%=obj["crop"]["cropid"]["escropid"]["cropid"]["variety"]%></p>
+            <p class="card-text">Des <%=obj["crop"]["cropid"]["escropid"]["cropid"]["description"]%></p>
+            <p class="card-text">Price <%=obj["crop"]["price"]%> min="" max="5"</p>
+            <p class="card-text">Date <%=obj["crop"]["date"]%></p>
+     
+
+
+</div>
+        </div>
+      </div>
+      <%if(i%3==0){%></div><%}%>
+      <%i+=1;})%>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

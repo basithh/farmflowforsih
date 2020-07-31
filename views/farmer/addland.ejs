@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Farmer Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link href="assets/libs/dropzone/dropzone.min.css" rel="stylesheet" type="text/css" />
+        <!-- App css -->
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+            <%- include('partials/topbar') %>
+            <%- include('partials/left-sidebar') %>
+
+         <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Upvex</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                                            <li class="breadcrumb-item active">Starter</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Add Land</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        <div class="row">
+                           
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <h4 class="mb-3 header-title">Add Your Land Deatils</h4>
+
+                                        <form class="form-horizontal">
+                                            <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Land Name</label>
+                                                <div class="col-9">
+                                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Land Name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="inputPassword3" class="col-3 col-form-label">Land Location</label>
+                                                <div class="col-9">
+                                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Land Location">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="inputPassword5" class="col-3 col-form-label">Land Area</label>
+                                                <div class="col-9">
+                                                    <input type="password" class="form-control" id="inputPassword5" placeholder="Land Area">
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="form-group mb-0 justify-content-end row">
+                                                <div class="col-9">
+                                                    <button type="submit" class="btn btn-info waves-effect waves-light">Add</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>  <!-- end card-body -->
+                                </div>  <!-- end card -->
+                            </div>  <!-- end col -->
+ 
+
+                            <div class="col-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Upload Picture</h4>
+                                        <p class="sub-header">
+                                           Add Land Photos
+                                        </p>
+    
+                                        <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+                                            data-upload-preview-template="#uploadPreviewTemplate">
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple />
+                                            </div>
+    
+                                            <div class="dz-message needsclick">
+                                                <p class="h1 text-muted"><i class="mdi mdi-cloud-upload"></i></p>
+                                                <h3>Drop files here or click to upload.</h3>
+                                                <span class="text-muted font-13"></span>
+                                            </div>
+                                        </form>
+    
+                                        <!-- Preview -->
+                                        <div class="dropzone-previews mt-3" id="file-previews"></div>
+                                    </div>
+                                    <!-- end card-body -->
+                                </div>
+                                <!-- end card-->
+                            </div>
+                            <!-- end col-->
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Add Deatils</h4>
+                                       
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <form>
+
+                                                    <div class="form-group mb-3">
+                                                        <label for="simpleinput">Price of Land</label>
+                                                        <input type="text" id="simpleinput" class="form-control" placeholder="Land Price approx">
+                                                    </div>
+
+                                                    <div class="form-group mb-3">
+                                                        <label for="example-textarea">Add Deatils of land</label>
+                                                        <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                                    </div>
+                                        
+                                                    <div class="form-group mb-3">
+                                                        <label for="simpleinput">Is the land suitable for Agriculture?</label>
+                                                    <div class="mt-3">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio1">Suitable</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio mt-1">
+                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio2">Not Suitable</label>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="button-list">
+                                                        <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Submit</button>
+                                                    </div>
+        
+                                                </form>
+                                            </div> <!-- end col -->
+
+                                            <div class="col-lg-6">
+                                                <form>
+                                                    
+                                                    <div class="form-group mb-3">
+                                                        <label for="simpleinput">Mention Crops Suitable for the land</label>
+                                                        <input type="text" id="simpleinput" class="form-control" placeholder="Land Price approx">
+                                                    </div>
+
+                                                    <div class="form-group mb-3">
+                                                        <label for="simpleinput">Crop Texture</label>
+                                                        <input type="text" id="simpleinput" class="form-control" placeholder="Crop Texture">
+                                                    </div>
+
+                                                    <div class="form-group mb-3">
+                                                        <label for="example-multiselect">Soil Type</label>
+                                                        <select id="example-multiselect" multiple class="form-control">
+                                                            <option>Red Soil</option>
+                                                            <option>Aluvial soil</option>
+                                                            <option>Black soil</option>
+                                                            <option>Clayey Soil</option>
+                                                            <option>Rock Soil</option>
+                                                            <option>Silt Soil</option>
+                                                        </select>
+                                                    </div>
+        
+                                                    <div class="form-group mb-0">
+                                                        <label for="example-range">Fertility Range</label>
+                                                        <input class="custom-range" id="example-range" type="range" name="range" min="0" max="100">
+                        </div>
+                        <!-- end row -->
+                        
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                <%- include('partials/footer') %>
+               
+
+            </div>
+
+              <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+        <%- include('partials/right-sidebar') %>
+
+        <!-- Plugins js -->
+        <script src="assets/libs/dropzone/dropzone.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-fileuploads.init.js"></script>
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

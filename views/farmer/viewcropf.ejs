@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Farmer Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link href="assets/libs/dropzone/dropzone.min.css" rel="stylesheet" type="text/css" />
+        <!-- App css -->
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+            <%- include('partials/topbar') %>
+
+            <%- include('partials/left-sidebar') %>
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <div class="content">
+
+
+                    <div class="container">
+                        <%var i=1;%>
+                        <%crop.forEach(function(obj) {%>
+                          <%if((i-1)%3==0){%><div class="row"><%}%>
+                          <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                              <img src="/image/<%=obj["image"]%>">
+                              <div class="card-body">
+                                <h5 class="card-title">Crop Name : <%=obj["cropName"]%></h5>
+                                <p class="card-text">Variety : <%=obj["variety"]%></p>
+                                <p class="card-text">POA : <%=obj["priceOnAvervage"]%></p>
+                                <p class="card-text">PM : <%=obj["priceMax"]%></p>
+                                <p class="card-text">Des :<%=obj["description"]%></p>
+                                <p class="card-text">wind : <%=obj["climate"]["wind"]%>Km/Hr</p>
+                                <p class="card-text">temp : <%=obj["climate"]["tempertature"]%>&#x2103</p>
+                                <p class="card-text">humi : <%=obj["climate"]["humidity"]%>&#x2103</p>
+                                <p class="card-text">Soil : <%=obj["soil"]%> %</p> 
+                                <a href="/viewcrop/<%=obj["_id"]%>/escropadd" class="btn btn-primary">Go somewhere</a>
+                    
+                    </div>
+                            </div>
+                          </div>
+                          <%if(i%3==0){%></div><%}%>
+                          <%i+=1;})%>
+                    </div>
+
+
+
+
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+ <footer class="footer">
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-md-6">
+                 2020 &copy; Farm Flow by <a href="">Team Alpha</a> 
+             </div>
+             <div class="col-md-6">
+                 <div class="text-md-right footer-links d-none d-sm-block">
+                     <a href="javascript:void(0);">About Us</a>
+                     <a href="javascript:void(0);">Help</a>
+                     <a href="javascript:void(0);">Contact Us</a>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </footer>
+ <!-- end Footer -->
+ 
+             </div>
+ 
+             <!-- ============================================================== -->
+             <!-- End Page content -->
+             <!-- ============================================================== -->
+ 
+ 
+         </div>
+ 
+ 
+        
+         <!-- END wrapper -->
+         <%- include('partials/right-sidebar') %>
+ 
+         <!-- Plugins js -->
+         <script src="assets/libs/dropzone/dropzone.min.js"></script>
+ 
+         <!-- Init js-->
+         <script src="assets/js/pages/form-fileuploads.init.js"></script>
+ 
+         <!-- Vendor js -->
+         <script src="assets/js/vendor.min.js"></script>
+ 
+         <!-- App js -->
+         <script src="assets/js/app.min.js"></script>
+         
+     </body>
+ </html>

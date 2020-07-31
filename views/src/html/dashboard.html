@@ -1,0 +1,59 @@
+<div class="row">
+  <%var i=1;%>
+  <%escrop.forEach(function(obj) {%>
+  <%if((i-1)%3==0){%><div class="col-sm-4"><%}%>
+      <div class="card">
+      <img class="card-img-top img-fluid" src="/image/<%=obj["cropid"]["image"]%>"alt="Card image cap">
+      <div class="card-body">
+          <h5 class="card-title"><%=obj["cropid"]["cropName"]%></h5>
+          <ul>
+              <li>Variety:<%=obj["cropid"]["variety"]%></li>
+              <li>POA: <%=obj["cropid"]["priceOnAvervage"]%></li>
+              <li>PM:<%=obj["cropid"]["priceMax"]%></li>
+              <li>DES:<%=obj["cropid"]["description"]%></li>
+              <li>Wind:<%=obj["cropid"]["climate"]["wind"]%>Km/Hr</li>
+              <li>Temperature:<%=obj["cropid"]["climate"]["tempertature"]%>&#x2103</li>
+              <li>Humidity: <%=obj["cropid"]["climate"]["humidity"]%> %</li>
+              <li>Soil: <%=obj["cropid"]["soil"]%> %</li>
+              <li>Soil:<%=obj["requirement"]%> %</li>
+              <li>Location : <%=obj["location"]%> %</li>
+              <li>finaldateofbid : <%=obj["finaldateofbid"]%> %</p>
+              </li>
+          </ul>
+          <!-- end col -->
+          <div class="button-list">
+              <button type="button" class="btn btn-primary waves-effect waves-light" onclick="/addmycrop/<%= obj["_id"]%>">Add to my crop</button>
+          </div>
+          
+      </div>
+      <div id="accordion" >
+          <div class="card mb-1">
+              <div class="card-header" id="headingOne">
+                  <h5 class="m-0">
+                      <a class="text-dark" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                          <i class="mdi mdi-help-circle mr-1 text-primary"></i> 
+                          What is Vakal text here?
+                      </a>
+                  </h5>
+              </div>
+    
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                      <%obj["userid"].forEach(function(obje) {%> 
+                          <p class="card-text">Name
+                          <%=obje["firstname"]%> 
+                      </p>
+                      <%})%>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <!-- end card-box-->
+  <%if(i%3==0){%></div><%}%>
+      <%i+=1;})%>
+<!-- end col -->
+
+</div>
+<!-- end page title -->
+
+</div> 

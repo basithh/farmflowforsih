@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Farmer Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link href="assets/libs/dropzone/dropzone.min.css" rel="stylesheet" type="text/css" />
+        <!-- App css -->
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+            <%- include('partials/topbar') %>
+
+            <%- include('partials/left-sidebar') %>
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Upvex</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                                            <li class="breadcrumb-item active">Starter</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">View Request</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+                         
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Request</h4>
+                                        <p class="text-muted font-13 mb-4">
+                                           
+                                        </p>
+
+                                        <table id="scroll-horizontal-datatable" class="table w-100 nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>sl.no</th>
+                                                    <th>Name</th>
+                                                    <th>transport type</th>
+                                                    <th>km</th>
+                                                    <th>load</th>
+                                                    <th>Start date</th>
+                                                    <th><center>Request</center></th> 
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>semi truck</td>
+                                                    <td>20km</td>
+                                                    <td>4tons</td>
+                                                    <td>2020/10/25</td>
+                                                    <td><button type="submit" class="btn btn-info waves-effect waves-light">Accept</button> &nbsp; <button type="submit" class="btn btn-info waves-effect waves-light">Deny</button> </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>semi truck</td>
+                                                    <td>20km</td>
+                                                    <td>4tons</td>
+                                                    <td>2020/10/25</td>
+                                                    <td><button type="submit" class="btn btn-info waves-effect waves-light">Accept</button> &nbsp; <button type="submit" class="btn btn-info waves-effect waves-light">Deny</button> </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>semi truck</td>
+                                                    <td>20km</td>
+                                                    <td>4tons</td>
+                                                    <td>2020/10/25</td>
+                                                    <td><button type="submit" class="btn btn-info waves-effect waves-light">Accept</button> &nbsp; <button type="submit" class="btn btn-info waves-effect waves-light">Deny</button> </td>
+                                                </tr>
+                        
+                                            </tbody>
+                                        </table>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+               <!-- Footer Start -->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                2020 &copy; Farm Flow by <a href="">Team Alpha</a> 
+            </div>
+            <div class="col-md-6">
+                <div class="text-md-right footer-links d-none d-sm-block">
+                    <a href="javascript:void(0);">About Us</a>
+                    <a href="javascript:void(0);">Help</a>
+                    <a href="javascript:void(0);">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+
+
+       
+        <!-- END wrapper -->
+        <%- include('partials/right-sidebar') %>
+
+        <!-- Plugins js -->
+        <script src="assets/libs/dropzone/dropzone.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-fileuploads.init.js"></script>
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>
